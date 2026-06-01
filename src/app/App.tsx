@@ -23,68 +23,82 @@ interface Project {
   tags: string[];
   hasGithub: boolean;
   hasVideo: boolean;
+  githubUrl?: string;
+  videoUrl?: string;
 }
 
 const projects: Project[] = [
   {
     id: 1,
     title: 'Basic AI Chatbot',
-    description: 'Beginner-friendly AI chatbot that handles user questions through a simple interface and demonstrates chatbot interaction basics.',
+    description: 'Multi-turn AI chatbot powered by Groq LLM API with full error handling and chat history.',
     level: 'Basic Level',
-    tags: ['Python', 'Streamlit', 'AI Chatbot', 'Prompt Engineering'],
+    tags: ['Python', 'Streamlit', 'Groq AI', 'Prompt Engineering'],
     hasGithub: true,
-    hasVideo: true
+    hasVideo: true,
+    githubUrl: 'https://github.com/MahboobAli1/nexe-agent-portfolio/tree/main/task1_chatbot',
+    videoUrl: 'https://nexe-agent-portfolio-chatbot.streamlit.app/'
   },
   {
     id: 2,
-    title: 'Gmail Automation Script',
-    description: 'Simple Gmail workflow automation for reading emails, filtering tasks, and productivity automation.',
+    title: 'Email Automation Script',
+    description: 'Automates sending scheduled and template-based emails using Gmail SMTP with a full send log.',
     level: 'Basic Level',
-    tags: ['Python', 'Automation', 'Gmail', 'Scripting'],
+    tags: ['Python', 'Gmail SMTP', 'Streamlit', 'Automation'],
     hasGithub: true,
-    hasVideo: true
+    hasVideo: true,
+    githubUrl: 'https://github.com/MahboobAli1/nexe-agent-portfolio/tree/main/task2_email',
+    videoUrl: 'https://nexe-agent-portfolio-email.streamlit.app/'
   },
   {
     id: 3,
     title: 'Resume Screener AI',
-    description: 'AI-based resume screening that reviews resumes, checks relevant skills, and helps shortlist profiles by requirements.',
+    description: 'Upload multiple PDF resumes and get AI-powered skill extraction and match percentage against any job description.',
     level: 'Intermediate Level',
-    tags: ['Python', 'AI', 'Resume Parsing', 'Scoring Logic'],
+    tags: ['Python', 'Groq AI', 'PyPDF2', 'Streamlit'],
     hasGithub: true,
-    hasVideo: true
+    hasVideo: true,
+    githubUrl: 'https://github.com/MahboobAli1/nexe-agent-portfolio/tree/main/task3_resume_screener',
+    videoUrl: 'https://nexe-agent-portfolio-resume.streamlit.app/'
   },
   {
     id: 4,
     title: 'WhatsApp Automation',
-    description: 'WhatsApp automation system with auto-replies, FAQ-based responses, QR login, local session storage, and conversation logging.',
+    description: 'FAQ-based WhatsApp bot with auto-reply logic, chat simulator, conversation logging, and FAQ manager.',
     level: 'Intermediate Level',
-    tags: ['Node.js', 'whatsapp-web.js', 'FAQ Bot', 'Conversation Logs'],
+    tags: ['Python', 'Twilio', 'Streamlit', 'Bot Automation'],
     hasGithub: true,
-    hasVideo: false
+    hasVideo: false,
+    githubUrl: 'https://github.com/MahboobAli1/nexe-agent-portfolio/tree/main/task4_whatsapp',
+    videoUrl: 'https://nexe-agent-portfolio-whatsapp-bot.streamlit.app/'
   },
   {
     id: 5,
     title: 'Multi-Tool AI Agent',
-    description: 'Advanced AI agent using multiple tools that handles structured tasks and workflow automation.',
+    description: 'Advanced AI agent using multiple tools that handles structured tasks and workflow automation with calculator, unit converter, text analyzer.',
     level: 'Advanced Level',
-    tags: ['AI Agent', 'Tool Calling', 'Python', 'Workflow Automation'],
+    tags: ['Python', 'Groq AI', 'Tool Calling', 'Streamlit'],
     hasGithub: true,
-    hasVideo: true
+    hasVideo: true,
+    githubUrl: 'https://github.com/MahboobAli1/nexe-agent-portfolio/tree/main/task5_ai_agent',
+    videoUrl: 'https://nexe-agent-portfolio-ai-agent.streamlit.app/'
   },
   {
     id: 6,
     title: 'RAG-based Knowledge Assistant',
-    description: 'Retrieval-augmented assistant that searches stored information and gives relevant answers through knowledge-base workflow.',
+    description: 'Upload company documents, store embeddings, and query them with contextual AI answers citing sources. Vector similarity search with contextual QA.',
     level: 'Advanced Level',
-    tags: ['RAG', 'Vector Search', 'LLM', 'Knowledge Base'],
+    tags: ['Python', 'Groq AI', 'PyPDF2', 'Vector Search'],
     hasGithub: true,
-    hasVideo: true
+    hasVideo: true,
+    githubUrl: 'https://github.com/MahboobAli1/nexe-agent-portfolio/tree/main/task6_rag',
+    videoUrl: 'https://nexe-agent-portfolio-rag.streamlit.app/'
   }
 ];
 
 const skills = [
   'Python', 'Node.js', 'JavaScript', 'Streamlit', 'WhatsApp Web Automation',
-  'Gmail Automation', 'RAG', 'LLM Tools', 'HTML', 'CSS', 'GitHub', 'Vercel'
+  'Gmail Automation', 'RAG', 'LLM Tools', 'Groq AI', 'Twilio', 'GitHub', 'Vercel'
 ];
 
 export default function App() {
@@ -111,11 +125,11 @@ export default function App() {
           <div className="flex items-start justify-between mb-6">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center text-white text-2xl">
-                Ω
+                🤖
               </div>
               <div>
-                <h1 className="text-2xl text-slate-900 mb-1">AI & Automation Internship Dashboard</h1>
-                <p className="text-slate-600">Mahboob Ali · AI Automation Intern</p>
+                <h1 className="text-2xl text-slate-900 mb-1">Nexe-Agent Internship Portfolio</h1>
+                <p className="text-slate-600">Mahboob Ali · AI & Automation Intern</p>
               </div>
             </div>
           </div>
@@ -126,14 +140,14 @@ export default function App() {
           </p>
 
           <div className="flex gap-4">
-            <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-shadow flex items-center gap-2">
+            <a href="#projects" className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-shadow flex items-center gap-2">
               <Layers className="w-4 h-4" />
               Explore Projects
-            </button>
-            <button className="px-6 py-3 bg-white border-2 border-slate-300 text-slate-700 rounded-lg hover:border-slate-400 transition-colors flex items-center gap-2">
+            </a>
+            <a href="https://github.com/MahboobAli1" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white border-2 border-slate-300 text-slate-700 rounded-lg hover:border-slate-400 transition-colors flex items-center gap-2">
               <Github className="w-4 h-4" />
               GitHub Profile
-            </button>
+            </a>
           </div>
         </div>
       </header>
@@ -185,7 +199,7 @@ export default function App() {
         </section>
 
         {/* Project Dashboard */}
-        <section className="mb-16">
+        <section className="mb-16" id="projects">
           <h2 className="text-3xl text-slate-900 mb-6">Internship Tasks by Level</h2>
 
           {/* Search and Filters */}
@@ -224,7 +238,7 @@ export default function App() {
               <div key={project.id} className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-xl text-slate-900">{project.title}</h3>
-                  <span className={`px-3 py-1 rounded-full text-xs ${
+                  <span className={`px-3 py-1 rounded-full text-xs whitespace-nowrap ${
                     project.level === 'Basic Level' ? 'bg-green-100 text-green-700' :
                     project.level === 'Intermediate Level' ? 'bg-yellow-100 text-yellow-700' :
                     'bg-red-100 text-red-700'
@@ -243,18 +257,28 @@ export default function App() {
                   ))}
                 </div>
 
-                <div className="flex gap-3">
-                  {project.hasGithub && (
-                    <button className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors">
+                <div className="flex gap-3 flex-wrap">
+                  {project.hasGithub && project.githubUrl && (
+                    <a 
+                      href={project.githubUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors"
+                    >
                       <Github className="w-4 h-4" />
                       GitHub
-                    </button>
+                    </a>
                   )}
-                  {project.hasVideo && (
-                    <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                  {project.hasVideo && project.videoUrl && (
+                    <a 
+                      href={project.videoUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
                       <Video className="w-4 h-4" />
-                      Video Demo
-                    </button>
+                      Live Demo
+                    </a>
                   )}
                   {!project.hasVideo && project.hasGithub && (
                     <span className="flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-500 rounded-lg">
@@ -274,31 +298,31 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-green-600 text-white rounded-lg flex items-center justify-center">01</div>
+                <div className="w-10 h-10 bg-green-600 text-white rounded-lg flex items-center justify-center font-bold">01</div>
                 <h3 className="text-xl text-slate-900">Basic Level</h3>
               </div>
               <p className="text-slate-700">
-                Basic AI Chatbot and Gmail Automation Script.
+                Basic AI Chatbot and Email Automation Script. Foundation-level projects to learn core concepts.
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-6 border border-yellow-200">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-yellow-600 text-white rounded-lg flex items-center justify-center">02</div>
+                <div className="w-10 h-10 bg-yellow-600 text-white rounded-lg flex items-center justify-center font-bold">02</div>
                 <h3 className="text-xl text-slate-900">Intermediate Level</h3>
               </div>
               <p className="text-slate-700">
-                Resume Screener AI and WhatsApp Automation.
+                Resume Screener AI and WhatsApp Automation. Build on basics with more complex integrations.
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-red-50 to-rose-50 rounded-xl p-6 border border-red-200">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-red-600 text-white rounded-lg flex items-center justify-center">03</div>
+                <div className="w-10 h-10 bg-red-600 text-white rounded-lg flex items-center justify-center font-bold">03</div>
                 <h3 className="text-xl text-slate-900">Advanced Level</h3>
               </div>
               <p className="text-slate-700">
-                Multi-Tool AI Agent and RAG-based Knowledge Assistant.
+                Multi-Tool AI Agent and RAG-based Knowledge Assistant. Master advanced AI concepts and workflows.
               </p>
             </div>
           </div>
@@ -329,57 +353,61 @@ export default function App() {
               <h3 className="text-xl text-slate-900 mb-4">Contact Information</h3>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                <a href="tel:+923041976417" className="flex items-center gap-3 hover:bg-slate-50 p-2 rounded-lg transition-colors">
+                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Phone className="w-5 h-5 text-blue-600" />
                   </div>
                   <div>
                     <p className="text-slate-500 text-sm">Phone</p>
-                    <p className="text-slate-900">+923041976417</p>
+                    <p className="text-slate-900">+92 304 1976417</p>
                   </div>
-                </div>
+                </a>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                <a href="mailto:mahboobalilaghari19@gmail.com" className="flex items-center gap-3 hover:bg-slate-50 p-2 rounded-lg transition-colors">
+                  <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5 text-purple-600" />
                   </div>
                   <div>
                     <p className="text-slate-500 text-sm">Email</p>
                     <p className="text-slate-900">mahboobalilaghari19@gmail.com</p>
                   </div>
-                </div>
+                </a>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center">
+                <a href="https://github.com/MahboobAli1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:bg-slate-50 p-2 rounded-lg transition-colors">
+                  <div className="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Github className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <p className="text-slate-500 text-sm">GitHub</p>
                     <p className="text-slate-900">github.com/MahboobAli1</p>
                   </div>
-                </div>
+                </a>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center">
+                <a href="https://linkedin.com/in/mahboob-ali" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:bg-slate-50 p-2 rounded-lg transition-colors">
+                  <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Linkedin className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <p className="text-slate-500 text-sm">LinkedIn</p>
                     <p className="text-slate-900">LinkedIn Profile</p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
             <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
               <h3 className="text-xl text-slate-900 mb-4">Send a Message</h3>
 
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={(e) => {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+              }}>
                 <div>
                   <label className="block text-slate-700 mb-2">Name</label>
                   <input
                     type="text"
                     placeholder="Your name"
+                    required
                     className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
@@ -389,6 +417,7 @@ export default function App() {
                   <input
                     type="email"
                     placeholder="your.email@example.com"
+                    required
                     className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
@@ -398,6 +427,7 @@ export default function App() {
                   <textarea
                     rows={4}
                     placeholder="Your message..."
+                    required
                     className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                   />
                 </div>
@@ -419,7 +449,10 @@ export default function App() {
       <footer className="bg-slate-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-slate-300">
-            © 2026 Mahboob Ali. Professional dashboard for Nexe Agent Internship submission.
+            © 2026 Mahboob Ali. Professional dashboard for Nexe-Agent Internship submission.
+          </p>
+          <p className="text-slate-400 text-sm mt-2">
+            Built with React, TypeScript, and Tailwind CSS
           </p>
         </div>
       </footer>
