@@ -68,7 +68,7 @@ const projects: Project[] = [
     level: 'Intermediate Level',
     tags: ['Python', 'Twilio', 'Streamlit', 'Bot Automation'],
     hasGithub: true,
-    hasVideo: false,
+    hasVideo: true,
     githubUrl: 'https://github.com/MahboobAli1/nexe-agent-portfolio/tree/main/task4_whatsapp',
     videoUrl: 'https://nexe-agent-portfolio-whatsapp-bot.streamlit.app/'
   },
@@ -383,7 +383,7 @@ export default function App() {
                   </div>
                 </a>
 
-                <a href="https://linkedin.com/in/mahboob-ali" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:bg-slate-50 p-2 rounded-lg transition-colors">
+                <a href="https://www.linkedin.com/in/mahboob-ali-ai-expert" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:bg-slate-50 p-2 rounded-lg transition-colors">
                   <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Linkedin className="w-5 h-5 text-white" />
                   </div>
