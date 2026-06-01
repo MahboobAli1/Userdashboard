@@ -191,9 +191,9 @@ export default function App() {
                 <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
                   <Video className="w-5 h-5 text-cyan-600" />
                 </div>
-                <span className="text-3xl text-slate-900">5</span>
+                <span className="text-3xl text-slate-900">6</span>
               </div>
-              <p className="text-slate-600">Video Enabled</p>
+              <p className="text-slate-600">Demos Enabled</p>
             </div>
           </div>
         </section>
