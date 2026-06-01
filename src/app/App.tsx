@@ -359,7 +359,7 @@ export default function App() {
                   </div>
                   <div>
                     <p className="text-slate-500 text-sm">Phone</p>
-                    <p className="text-slate-900">+92 304 1976417</p>
+                    <p className="text-slate-900">NA</p>
                   </div>
                 </a>
 
